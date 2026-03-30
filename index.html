@@ -132,6 +132,52 @@
             font-size: 1rem;
             color: var(--text-muted);
             max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        /* Call to Action Banner */
+        .cta-banner {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold-primary);
+            border-radius: 12px;
+            padding: 15px 25px;
+            margin: 10px auto 20px;
+            display: inline-block;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+            text-align: center;
+        }
+
+        .cta-banner p {
+            margin: 0;
+            color: var(--gold-light);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            background: #128C7E;
+        }
+
+        .whatsapp-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
         }
 
         /* Menu Container */
@@ -144,7 +190,6 @@
         .category-section {
             margin-bottom: 50px;
             padding-top: 80px;
-            /* Offset for sticky nav */
             margin-top: -80px;
         }
 
@@ -161,14 +206,14 @@
             gap: 10px;
         }
 
-        /* Items Grid */
+        /* Grid For Hero Items */
         .items-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 25px;
+            margin-bottom: 25px;
         }
 
-        /* Glassmorphism Card */
         .menu-card {
             background: var(--glass-bg);
             border: 1px solid var(--glass-border);
@@ -176,15 +221,8 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
-            border-color: rgba(212, 175, 55, 0.4);
         }
 
         .card-image {
@@ -198,86 +236,129 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
 
-        .menu-card:hover .card-image img {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            padding: 20px;
+        /* List Layout for clean data */
+        .list-layout {
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
+            gap: 12px;
         }
 
-        .card-header {
+        .list-item {
+            background: rgba(25, 25, 25, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .list-item-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
 
-        .item-name {
-            font-size: 1.2rem;
+        .list-item-name {
+            font-size: 1.05rem;
             font-weight: 700;
             color: var(--text-light);
             margin-right: 15px;
         }
 
-        .item-price {
-            font-size: 1.25rem;
+        .list-item-price {
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--gold-primary);
+            white-space: nowrap;
         }
 
-        .item-description {
-            font-size: 0.9rem;
+        .list-item-prices {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .price-label {
+            font-size: 0.75rem;
             color: var(--text-muted);
-            line-height: 1.5;
-            flex-grow: 1;
+            font-weight: normal;
+            display: block;
+            text-align: right;
+            margin-bottom: 2px;
         }
 
-        /* Extra Details/Tags */
-        .item-tags {
+        .list-item-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        .subcategory-title {
+            font-size: 1.25rem;
+            color: #fff;
+            margin: 30px 0 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px dashed rgba(212, 175, 55, 0.3);
+        }
+
+        /* Tag Grid */
+        .tag-grid {
             margin-top: 15px;
             display: flex;
-            gap: 10px;
             flex-wrap: wrap;
+            gap: 8px;
         }
 
         .tag {
             font-size: 0.75rem;
-            padding: 4px 10px;
+            padding: 6px 12px;
             border-radius: 12px;
             background: rgba(212, 175, 55, 0.1);
             color: var(--gold-light);
             border: 1px solid rgba(212, 175, 55, 0.3);
+            text-transform: uppercase;
+        }
+
+        .tag-orange {
+            border-color: rgba(255, 165, 0, 0.4);
+            color: #ffcd8e;
+        }
+
+        .tag-red {
+            border-color: rgba(255, 60, 60, 0.4);
+            color: #ff8e8e;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             background: #050505;
             border-top: 1px solid var(--glass-border);
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         .footer-logo {
             color: var(--gold-primary);
             font-weight: 700;
+            font-size: 1.2rem;
             margin-bottom: 10px;
+            letter-spacing: 1px;
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 600px) {
-            .items-grid {
-                grid-template-columns: 1fr;
-            }
+        .footer-notes {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            max-width: 600px;
+            margin: 20px auto 0;
+            color: #777;
+            font-weight: 600;
+        }
 
+        @media (max-width: 600px) {
             .hero h1 {
                 font-size: 1.6rem;
             }
@@ -291,10 +372,11 @@
     <header>
         <nav class="nav-container">
             <div class="nav-links">
-                <a href="#cocteleria">Coctelería</a>
-                <a href="#cervezas">Cervezas</a>
+                <a href="#entradas">Entradas</a>
                 <a href="#alitas">Alitas</a>
                 <a href="#hamburguesas">Hamburguesas</a>
+                <a href="#bebidas">Bebidas</a>
+                <a href="#alcohol">Alcohol</a>
             </div>
         </nav>
     </header>
@@ -302,177 +384,179 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="logo-container">
-            <!-- Asumimos que el logo se llama logo.png y el usuario lo guardará ahí -->
             <img src="logo.jpg" alt="22/30 The Wings House"
                 onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><rect width=\'150\' height=\'150\' fill=\'%23000\'/><text x=\'50%\' y=\'50%\' fill=\'%23D4AF37\' font-size=\'20\' font-family=\'Arial\' font-weight=\'bold\' text-anchor=\'middle\' dy=\'.3em\'>22/30</text></svg>'">
         </div>
         <h1>The Wings House</h1>
         <p>Disfruta de nuestras refrescantes bebidas, alitas en su punto y hamburguesas jugosas.</p>
+        
+        <div class="cta-banner">
+            <p>🍸 ¡Contamos con servicio de barra para tus eventos! 🍸</p>
+            <a href="https://wa.me/527472221016" class="whatsapp-btn" target="_blank">
+                <svg class="whatsapp-icon" viewBox="0 0 24 24">
+                    <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.658.847 5.143 2.332 7.21l-1.55 5.666 5.805-1.523A11.968 11.968 0 0012.03 24c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm0 22.016c-2.184 0-4.256-.566-6.11-1.636l-.44-.25-4.113 1.079 1.096-4.008-.276-.44A9.974 9.974 0 011.984 12.03c0-5.54 4.505-10.046 10.046-10.046 5.541 0 10.047 4.505 10.047 10.046 0 5.542-4.506 10.046-10.047 10.046zm5.512-7.536c-.302-.15-1.785-.88-2.062-.982-.276-.1-.477-.15-.678.15-.201.302-.78 1-.956 1.201-.176.202-.352.226-.654.076-1.517-.768-2.583-1.468-3.66-3.32-.152-.26-.008-.415.132-.572.15-.17.302-.352.453-.527.151-.176.201-.302.302-.503.1-.201.05-.377-.025-.527-.076-.15-1.008-2.43-1.381-3.324-.365-.872-.736-.753-1.008-.767H7.49c-.3 0-.78.113-1.182.553C5.908 6.64 4.8 7.696 4.8 9.856c0 2.16 1.132 4.246 1.283 4.446.15.202 3.036 4.63 7.355 6.494 2.766 1.192 3.842 1.282 4.569 1.055.852-.27 2.062-1.08 2.363-2.13.3-1.05.3-1.954.21-2.143-.09-.188-.34-.3-.64-.45z"/>
+                </svg>
+                Contáctanos por WhatsApp
+            </a>
+        </div>
     </section>
 
-    <!-- Contenedor Principal del Menú -->
+    <!-- Menu Section -->
     <main class="menu-container">
 
-        <!-- Categoría: Coctelería -->
-        <section id="cocteleria" class="category-section">
-            <h2 class="category-title">🍸 Coctelería</h2>
+        <!-- Categoría: Entradas -->
+        <section id="entradas" class="category-section">
+            <h2 class="category-title">🍟 Entradas</h2>
             <div class="items-grid">
-
                 <article class="menu-card">
                     <div class="card-image">
-                        <img src="img/premium_cocktail.png" alt="Signature Cocktail">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">The 22/30 Signature</h3>
-                            <span class="item-price">$120</span>
-                        </div>
-                        <p class="item-description">Nuestra creación estelar. Mezcla exótica de rones, jugos cítricos
-                            frescos y un toque de maracuyá, escarchado en oro comestible y servido con humo.</p>
-                        <div class="item-tags">
-                            <span class="tag">Refrescante</span>
-                            <span class="tag">Especialidad</span>
-                        </div>
+                        <img src="img/premium_fries.png" alt="Papas">
                     </div>
                 </article>
-
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_cocktail.png" alt="Margarita Clásica" style="filter: hue-rotate(60deg);">
+            </div>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Papas a la Francesa</span>
+                        <span class="list-item-price">$65</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Golden Margarita</h3>
-                            <span class="item-price">$110</span>
-                        </div>
-                        <p class="item-description">Tequila reposado 100% agave, licor de naranja, jugo de limón fresco
-                            y néctar de agave, servido en una copa escarchada con sal de gusano.</p>
-                        <div class="item-tags">
-                            <span class="tag">Clásico</span>
-                        </div>
+                    <p class="list-item-desc">(300 Gramos)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Papas Gajo</span>
+                        <span class="list-item-price">$70</span>
                     </div>
-                </article>
-
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_cocktail.png" alt="Mojito" style="filter: hue-rotate(180deg);">
+                    <p class="list-item-desc">(300 Gramos)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Dedos de Queso</span>
+                        <span class="list-item-price">$95</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Mojito The House</h3>
-                            <span class="item-price">$105</span>
-                        </div>
-                        <p class="item-description">Ron blanco caribeño, hojas de menta fresca machacada, lima, azúcar
-                            de caña y top de club soda.</p>
-                        <div class="item-tags">
-                            <span class="tag">Dulce</span>
-                        </div>
+                    <p class="list-item-desc">(5 Piezas)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Nuggets</span>
+                        <span class="list-item-price">$75</span>
                     </div>
-                </article>
-
+                    <p class="list-item-desc">(10 Piezas)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Aros de Cebolla</span>
+                        <span class="list-item-price">$80</span>
+                    </div>
+                    <p class="list-item-desc">(8 Piezas)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Dinno Nuggets</span>
+                        <span class="list-item-price">$80</span>
+                    </div>
+                    <p class="list-item-desc">(10 Piezas)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Nachos</span>
+                        <span class="list-item-price">$85</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Salchi-Papas</span>
+                        <span class="list-item-price">$99</span>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Categoría: Cervezas -->
-        <section id="cervezas" class="category-section">
-            <h2 class="category-title">🍺 Cervezas</h2>
-            <div class="items-grid">
-
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_beer.png" alt="Cerveza Artesanal">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Tarro Dark Stout</h3>
-                            <span class="item-price">$85</span>
-                        </div>
-                        <p class="item-description">Cerveza oscura artesanal con notas profundas de café tostado,
-                            chocolate oscuro y un final suavemente amargo.</p>
-                        <div class="item-tags">
-                            <span class="tag">Artesanal</span>
-                            <span class="tag">Oscura</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_beer.png" alt="Cerveza Clara" style="filter: brightness(1.2);">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Tarro Golden Lager</h3>
-                            <span class="item-price">$80</span>
-                        </div>
-                        <p class="item-description">Cerveza clara y crujiente, refrescante al paladar con un ligero
-                            toque de lúpulos florales. Se sirve en vaso escarchado.</p>
-                        <div class="item-tags">
-                            <span class="tag">Clara</span>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Categoría: Alitas -->
+        <!-- Categoría: Alitas & Boneless -->
         <section id="alitas" class="category-section">
-            <h2 class="category-title">🍗 Alitas</h2>
+            <h2 class="category-title">🍗 Alitas & Boneless</h2>
             <div class="items-grid">
-
                 <article class="menu-card">
                     <div class="card-image">
-                        <img src="img/premium_wings.png" alt="Alitas Buffalo">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Buffalo Originales (10 pz)</h3>
-                            <span class="item-price">$160</span>
-                        </div>
-                        <p class="item-description">Bañadas en nuestra salsa secreta 22/30, el balance perfecto entre
-                            picante y vinagre. Acompañadas de apio, zanahoria y dip de Blue Cheese o Ranch.</p>
-                        <div class="item-tags">
-                            <span class="tag">🔥 Picante Medio</span>
-                        </div>
+                        <img src="img/premium_wings.png" alt="Alitas">
                     </div>
                 </article>
+            </div>
+            
+            <h3 class="subcategory-title">Alitas</h3>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Alitas Orden de 6 Piezas</span>
+                        <span class="list-item-price">$115</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Alitas Orden de 12 Piezas</span>
+                        <span class="list-item-price">$210</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Alitas Orden de 18 Piezas</span>
+                        <span class="list-item-price">$320</span>
+                    </div>
+                </div>
+            </div>
 
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_wings.png" alt="Alitas BBQ" style="filter: sepia(0.5);">
+            <h3 class="subcategory-title">Boneless</h3>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Boneless 250 Gramos</span>
+                        <span class="list-item-price">$115</span>
                     </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">BBQ Ahumada Miel (10 pz)</h3>
-                            <span class="item-price">$165</span>
-                        </div>
-                        <p class="item-description">Nuestra mezcla casera de salsa BBQ con toques de humo de nogal y
-                            cubierta de miel natural, doradas a la perfección para que caramelicen.</p>
-                        <div class="item-tags">
-                            <span class="tag">Dulce</span>
-                        </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Boneless 500 Gramos</span>
+                        <span class="list-item-price">$210</span>
                     </div>
-                </article>
+                </div>
+            </div>
 
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_wings.png" alt="Alitas Lemon Pepper"
-                            style="filter: grayscale(0.2) brightness(1.1);">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Lemon Pepper Dry (10 pz)</h3>
-                            <span class="item-price">$155</span>
-                        </div>
-                        <p class="item-description">La versión seca favorita. Crujientes alitas frotadas con nuestra
-                            mezcla especial de pimienta negra agrietada y ralladura cítrica de limón.</p>
-                        <div class="item-tags">
-                            <span class="tag">Dry Rub</span>
-                        </div>
-                    </div>
-                </article>
-
+            <h3 class="subcategory-title">Sabores y Toppings</h3>
+            <div class="list-item">
+                <p class="list-item-desc" style="margin-bottom: 10px; color:#fff;">*Incluye zanahorias, pepino y aderezo ranch.</p>
+                <div class="tag-grid">
+                    <span class="tag">BBQ</span>
+                    <span class="tag">Mango</span>
+                    <span class="tag">Fresa</span>
+                    <span class="tag">Piña</span>
+                    <span class="tag">Tamarindo</span>
+                    <span class="tag">Ajo Parmasa</span>
+                    <span class="tag">Teriyaki</span>
+                    <span class="tag">Mango-Piña</span>
+                    <span class="tag">BBQ-Mango</span>
+                    <span class="tag">Mostaza Miel</span>
+                    <span class="tag tag-orange">Bufalo</span>
+                    <span class="tag tag-orange">22/30</span>
+                    <span class="tag tag-orange">Valentina</span>
+                    <span class="tag tag-orange">Horiginal Hot</span>
+                    <span class="tag tag-orange">Lemon Pepper</span>
+                    <span class="tag tag-red">BBQ Habanero</span>
+                    <span class="tag tag-red">Mango Habanero</span>
+                    <span class="tag tag-red">Tamarindo Habanero</span>
+                    <span class="tag tag-red">Valentina Habanero</span>
+                    <span class="tag tag-red">Piña Habanero</span>
+                    <span class="tag tag-red">Habanero Cream</span>
+                    <span class="tag tag-red">Xhot</span>
+                    <span class="tag tag-red">Fresa Habanero</span>
+                </div>
+                <div class="list-item-header" style="margin-top: 15px;">
+                    <span class="list-item-name" style="font-size: 0.9rem;">Topping extra (Salsa)</span>
+                    <span class="list-item-price" style="font-size: 0.9rem;">$15</span>
+                </div>
+                <div class="list-item-header">
+                    <span class="list-item-name" style="font-size: 0.9rem;">Aderezo extra (Ranch, Chipotle)</span>
+                    <span class="list-item-price" style="font-size: 0.9rem;">$15</span>
+                </div>
             </div>
         </section>
 
@@ -480,61 +564,438 @@
         <section id="hamburguesas" class="category-section">
             <h2 class="category-title">🍔 Hamburguesas</h2>
             <div class="items-grid">
-
                 <article class="menu-card">
                     <div class="card-image">
-                        <img src="img/premium_burger.png" alt="Hamburguesa 22/30">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">The 22/30 Burger</h3>
-                            <span class="item-price">$185</span>
-                        </div>
-                        <p class="item-description">Doble carne de res 100% Angus, doble porción de queso cheddar
-                            fundido, tocino ahumado grueso, aros de cebolla empanizados y nuestra salsa insignia en pan
-                            brioche artesanal.</p>
-                        <div class="item-tags">
-                            <span class="tag">Recomendación del Chef</span>
-                        </div>
+                        <img src="img/premium_burger.png" alt="Hamburguesas">
                     </div>
                 </article>
-
-                <article class="menu-card">
-                    <div class="card-image">
-                        <img src="img/premium_burger.png" alt="Classic Burger"
-                            style="filter: contrast(1.1) brightness(0.9);">
-                    </div>
-                    <div class="card-content">
-                        <div class="card-header">
-                            <h3 class="item-name">Classic Cheese</h3>
-                            <span class="item-price">$150</span>
-                        </div>
-                        <p class="item-description">Medio libra de carne jugosa, lechuga fresca, rebanadas de tomate
-                            orgánico, cebolla morada, pepinillos crujientes y queso derretido.</p>
-                        <div class="item-tags">
-                            <span class="tag">Clásica</span>
-                        </div>
-                    </div>
-                </article>
-
             </div>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Sencilla</span>
+                        <span class="list-item-price">$80</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, queso americano, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Especial</span>
+                        <span class="list-item-price">$90</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Pepperoni</span>
+                        <span class="list-item-price">$115</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, queso gouda, jamón, pepperoni, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Champiqueso</span>
+                        <span class="list-item-price">$120</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, queso gouda, champiñones, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Doble</span>
+                        <span class="list-item-price">$120</span>
+                    </div>
+                    <p class="list-item-desc">Doble carne tipo arrachera, jamón, queso gouda, queso americano, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">BBQ</span>
+                        <span class="list-item-price">$120</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, doble tocino, salsa BBQ, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Queso</span>
+                        <span class="list-item-price">$125</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, salchicha, bañada en queso amarillo, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Dorita</span>
+                        <span class="list-item-price">$125</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, tocino, doritos, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Pollo</span>
+                        <span class="list-item-price">$130</span>
+                    </div>
+                    <p class="list-item-desc">Pechuga empanizada, queso gouda, tocino, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">The 22/30</span>
+                        <span class="list-item-price">$130</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, salchicha, tocino, queso americano, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Hawaiana</span>
+                        <span class="list-item-price">$130</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, salchicha, tocino, piña, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Norteña</span>
+                        <span class="list-item-price">$165</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, jamón, queso gouda, tocino, salchicha de asar, chile jalapeño relleno de queso gouda envuelto en tocino, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Mar y Tierra</span>
+                        <span class="list-item-price">$180</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, queso gouda, camarones, tocino, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Suprema</span>
+                        <span class="list-item-price">$200</span>
+                    </div>
+                    <p class="list-item-desc">Doble carne tipo arrachera, queso americano, queso gouda, jamón, tocino, salchicha de asar, salchicha, papas a la francesa.</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Mini Hamburguesas</span>
+                        <span class="list-item-price">$200</span>
+                    </div>
+                    <p class="list-item-desc">Carne tipo arrachera, queso gouda, queso americano.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categoría: Bebidas Sin Alcohol -->
+        <section id="bebidas" class="category-section">
+            <h2 class="category-title">🥤 Bebidas S/A</h2>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Naranjada</span>
+                        <span class="list-item-price">$50</span>
+                    </div>
+                    <p class="list-item-desc">(473 ML)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Limonada</span>
+                        <span class="list-item-price">$50</span>
+                    </div>
+                    <p class="list-item-desc">(473 ML)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Limonada de Fresa</span>
+                        <span class="list-item-price">$70</span>
+                    </div>
+                    <p class="list-item-desc">(473 ML)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Coca-Cola</span>
+                        <span class="list-item-price">$35</span>
+                    </div>
+                    <p class="list-item-desc">(Lata)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Agua Mineral</span>
+                        <span class="list-item-price">$35</span>
+                    </div>
+                    <p class="list-item-desc">(600 ML)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Agua Natural</span>
+                        <span class="list-item-price">$25</span>
+                    </div>
+                    <p class="list-item-desc">(600 ML)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Jugo en Vaso</span>
+                        <span class="list-item-price">$35</span>
+                    </div>
+                    <p class="list-item-desc">(473 ML. Piña, naranja, manzana, durazno)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Té Helado</span>
+                        <span class="list-item-price">$45</span>
+                    </div>
+                    <p class="list-item-desc">(473 ML. Durazno, Té negro, tradicional)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Jarra de 1L</span>
+                        <span class="list-item-price">$85</span>
+                    </div>
+                    <p class="list-item-desc">(Jugo o Té)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categoría: Bebidas con Alcohol -->
+        <section id="alcohol" class="category-section">
+            <h2 class="category-title">🥂 Bebidas Con Alcohol</h2>
+            <div class="items-grid">
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_cocktail.png" alt="Cocteles">
+                    </div>
+                </article>
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_beer.png" alt="Cervezas">
+                    </div>
+                </article>
+            </div>
+
+            <h3 class="subcategory-title">Mixología Especial</h3>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Mojitos</span>
+                        <div class="list-item-prices">
+                            <div><span class="price-label">Medio</span><span class="list-item-price">$95</span></div>
+                            <div><span class="price-label">Litro</span><span class="list-item-price">$125</span></div>
+                        </div>
+                    </div>
+                    <p class="list-item-desc">Sabores: Frutos rojos, Fresa, Naranja, Kiwi, Pepino, Toronja, Tradicional, Coco, Mora</p>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Vodkasos</span>
+                        <div class="list-item-prices">
+                            <div><span class="price-label">Medio</span><span class="list-item-price">$90</span></div>
+                            <div><span class="price-label">Litro</span><span class="list-item-price">$120</span></div>
+                        </div>
+                    </div>
+                    <p class="list-item-desc">Sabores: Mango, Uva, Piña, Fresa, Tamarindo, Naranja, Guayaba, Jamaica, Mandarina</p>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Micheladas</span>
+                        <div class="list-item-prices">
+                            <div><span class="price-label">Medio</span><span class="list-item-price">$90</span></div>
+                            <div><span class="price-label">Litro</span><span class="list-item-price">$120</span></div>
+                        </div>
+                    </div>
+                    <p class="list-item-desc">Sabores: Mango, Uva, Piña, Fresa, Tamarindo, Mandarina, Naranja, Clamato, Cubana, Chamoy, Guayaba, Limón y sal. (Cambio de cerveza a elección costo extra)</p>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Especiales Variados (Litro / Medio)</span>
+                        <div class="list-item-prices">
+                            <div><span class="price-label">Medio</span><span class="list-item-price">$90</span></div>
+                            <div><span class="price-label">Litro</span><span class="list-item-price">$120</span></div>
+                        </div>
+                    </div>
+                    <p class="list-item-desc">Tequila Sunrise, Tequila Rose, Azulito, Piña Colada, Desarmador, Flamingo, Bob Sponja, Quemadito</p>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Perro Salado</span>
+                        <span class="list-item-price" style="margin-left:auto;">$65</span>
+                        <span class="list-item-desc" style="margin-left: 10px;">(Medio)</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">22/30 Especial (473ml)</span>
+                        <span class="list-item-price">$100</span>
+                    </div>
+                    <p class="list-item-desc">Cerveza mixta, tequila, vodka, ron.</p>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Cantarito o Cazuelita</span>
+                        <span class="list-item-price">$90</span>
+                    </div>
+                    <p class="list-item-desc">(Medio Litro)</p>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Caribeña / Stromboreña / Skyyreña</span>
+                        <span class="list-item-price">$120</span>
+                    </div>
+                    <p class="list-item-desc">(Litro - Sabor a elegir)</p>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Coscorronasos</span>
+                        <span class="list-item-price">$100</span>
+                    </div>
+                    <p class="list-item-desc">(4 Piezas)</p>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Micheladitas</span>
+                        <span class="list-item-price">$280</span>
+                    </div>
+                    <p class="list-item-desc">(6 Piezas - Carta blanca sabor a elegir)</p>
+                </div>
+            </div>
+
+            <h3 class="subcategory-title">Cervecería & Megas</h3>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Megas</span>
+                    </div>
+                    <div class="tag-grid">
+                        <span class="tag">XX $80</span>
+                        <span class="tag">Tecate Light $75</span>
+                        <span class="tag">Indio $75</span>
+                        <span class="tag">Carta Blanca $70</span>
+                        <span class="tag">Miller $90</span>
+                        <span class="tag">Modelo $90</span>
+                        <span class="tag">Victoria $85</span>
+                        <span class="tag">Corona $85</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Cervecería Comercial</span>
+                    </div>
+                    <div class="tag-grid">
+                        <span class="tag">Bohemia $40</span>
+                        <span class="tag">Heineken $40</span>
+                        <span class="tag">Ultra $40</span>
+                        <span class="tag">Strongbow $40</span>
+                        <span class="tag">Modelo (Negra, Clara) $45</span>
+                        <span class="tag">Sky $45</span>
+                        <span class="tag">Caribe $40</span>
+                        <span class="tag">Corona $35</span>
+                        <span class="tag">Victoria $35</span>
+                        <span class="tag">XX (Normal, Ultra, Ambar) $30</span>
+                        <span class="tag">Tecate Light $30</span>
+                        <span class="tag">Indio $30</span>
+                        <span class="tag">Carta Blanca $25</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Tarro Cervecero</span>
+                        <div class="list-item-prices">
+                            <div><span class="price-label">Chico</span><span class="list-item-price">$40</span></div>
+                            <div><span class="price-label">Grande</span><span class="list-item-price">$75</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Cubetazos (6 Pzas)</span>
+                    </div>
+                    <div class="tag-grid">
+                        <span class="tag">XX/Indio/Tecate $160</span>
+                        <span class="tag">Corona/Victoria $190</span>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Mega Cubetazos (10 Pzas)</span>
+                    </div>
+                    <div class="tag-grid">
+                        <span class="tag">XX/Indio/Tecate $250</span>
+                        <span class="tag">Corona/Victoria $300</span>
+                    </div>
+                </div>
+                
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Cartón</span>
+                    </div>
+                    <div class="tag-grid">
+                        <span class="tag">Corona/Victoria $720</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="subcategory-title">Botanas</h3>
+            <div class="list-layout">
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Plato Botanero</span>
+                        <span class="list-item-price">$120</span>
+                    </div>
+                    <p class="list-item-desc">(Naranja, toronja, pepino, zanahoria, limón, sal, miguelito, chamoy, valentina)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Plato Gomita</span>
+                        <span class="list-item-price">$70</span>
+                    </div>
+                    <p class="list-item-desc">(Gomitas, chamoy, miguelito)</p>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Plato Mezcla Salada</span>
+                        <span class="list-item-price">$70</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Plato Mezcla Enchilada</span>
+                        <span class="list-item-price">$70</span>
+                    </div>
+                </div>
+                <div class="list-item">
+                    <div class="list-item-header">
+                        <span class="list-item-name">Plato Sabritas</span>
+                        <span class="list-item-price">$80</span>
+                    </div>
+                    <p class="list-item-desc">(Chetos Flamin Hot, Doritos Flamin Hot, Churrumais Flamin Hot)</p>
+                </div>
+            </div>
+
         </section>
 
     </main>
 
     <footer>
         <div class="footer-logo">22/30 THE WINGS HOUSE</div>
-        <p>© 2026 Todos los derechos reservados. Diseñado para ofrecerte la mejor experiencia.</p>
+        <div class="footer-notes">
+            No se hacen cuentas separadas.<br>
+            Para un mejor servicio y sabor todos los alimentos se preparan al momento.<br><br>
+            <span style="color:var(--gold-primary);">Servicio a domicilio con costo extra.</span>
+        </div>
     </footer>
 
     <script>
-        // Actualizar el menú activo basado en la posición del scroll (Intersection Observer)
         const sections = document.querySelectorAll('.category-section');
         const navLinks = document.querySelectorAll('.nav-links a');
 
         const observerOptions = {
             root: null,
-            rootMargin: '-50% 0px -50% 0px', // Activa la sección cuando pasa por la mitad de la pantalla
+            rootMargin: '-50% 0px -50% 0px',
             threshold: 0
         };
 
@@ -545,7 +1006,6 @@
                         link.classList.remove('active');
                         if (link.getAttribute('href').substring(1) === entry.target.id) {
                             link.classList.add('active');
-                            // Opcional: Centrar el menú deslizando si está en un contenedor pequeño
                             link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                         }
                     });
