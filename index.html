@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22/30 The Wings House | Menú</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --gold-primary: #D4AF37;
+            --gold-light: #F3E5AB;
+            --text-light: #F5F5F5;
+            --text-muted: #A0A0A0;
+            --glass-bg: rgba(25, 25, 25, 0.6);
+            --glass-border: rgba(212, 175, 55, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+        }
+
+        body {
+            background-image: radial-gradient(circle at 50% 0%, #1a1a1a 0%, var(--bg-color) 40%);
+            min-height: 100vh;
+        }
+
+        /* Nav Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 0 20px;
+            scrollbar-width: none;
+            /* Firefox */
+        }
+
+        .nav-links::-webkit-scrollbar {
+            display: none;
+            /* Chrome/Safari */
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            white-space: nowrap;
+            padding: 8px 12px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--bg-color);
+            background-color: var(--gold-primary);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Hero / Logo Section */
+        .hero {
+            padding: 120px 20px 50px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #000;
+            border: 2px solid var(--gold-primary);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            color: var(--gold-primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            max-width: 400px;
+        }
+
+        /* Menu Container */
+        .menu-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+
+        .category-section {
+            margin-bottom: 50px;
+            padding-top: 80px;
+            /* Offset for sticky nav */
+            margin-top: -80px;
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Items Grid */
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        /* Glassmorphism Card */
+        .menu-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .menu-card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .item-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-right: 15px;
+        }
+
+        .item-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--gold-primary);
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        /* Extra Details/Tags */
+        .item-tags {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold-light);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background: #050505;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-logo {
+            color: var(--gold-primary);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .items-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navegación Sticky -->
+    <header>
+        <nav class="nav-container">
+            <div class="nav-links">
+                <a href="#cocteleria">Coctelería</a>
+                <a href="#cervezas">Cervezas</a>
+                <a href="#alitas">Alitas</a>
+                <a href="#hamburguesas">Hamburguesas</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="logo-container">
+            <!-- Asumimos que el logo se llama logo.png y el usuario lo guardará ahí -->
+            <img src="logo.jpg" alt="22/30 The Wings House"
+                onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'150\' height=\'150\' viewBox=\'0 0 150 150\'><rect width=\'150\' height=\'150\' fill=\'%23000\'/><text x=\'50%\' y=\'50%\' fill=\'%23D4AF37\' font-size=\'20\' font-family=\'Arial\' font-weight=\'bold\' text-anchor=\'middle\' dy=\'.3em\'>22/30</text></svg>'">
+        </div>
+        <h1>The Wings House</h1>
+        <p>Disfruta de nuestras refrescantes bebidas, alitas en su punto y hamburguesas jugosas.</p>
+    </section>
+
+    <!-- Contenedor Principal del Menú -->
+    <main class="menu-container">
+
+        <!-- Categoría: Coctelería -->
+        <section id="cocteleria" class="category-section">
+            <h2 class="category-title">🍸 Coctelería</h2>
+            <div class="items-grid">
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_cocktail.png" alt="Signature Cocktail">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">The 22/30 Signature</h3>
+                            <span class="item-price">$120</span>
+                        </div>
+                        <p class="item-description">Nuestra creación estelar. Mezcla exótica de rones, jugos cítricos
+                            frescos y un toque de maracuyá, escarchado en oro comestible y servido con humo.</p>
+                        <div class="item-tags">
+                            <span class="tag">Refrescante</span>
+                            <span class="tag">Especialidad</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_cocktail.png" alt="Margarita Clásica" style="filter: hue-rotate(60deg);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Golden Margarita</h3>
+                            <span class="item-price">$110</span>
+                        </div>
+                        <p class="item-description">Tequila reposado 100% agave, licor de naranja, jugo de limón fresco
+                            y néctar de agave, servido en una copa escarchada con sal de gusano.</p>
+                        <div class="item-tags">
+                            <span class="tag">Clásico</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_cocktail.png" alt="Mojito" style="filter: hue-rotate(180deg);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Mojito The House</h3>
+                            <span class="item-price">$105</span>
+                        </div>
+                        <p class="item-description">Ron blanco caribeño, hojas de menta fresca machacada, lima, azúcar
+                            de caña y top de club soda.</p>
+                        <div class="item-tags">
+                            <span class="tag">Dulce</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Categoría: Cervezas -->
+        <section id="cervezas" class="category-section">
+            <h2 class="category-title">🍺 Cervezas</h2>
+            <div class="items-grid">
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_beer.png" alt="Cerveza Artesanal">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Tarro Dark Stout</h3>
+                            <span class="item-price">$85</span>
+                        </div>
+                        <p class="item-description">Cerveza oscura artesanal con notas profundas de café tostado,
+                            chocolate oscuro y un final suavemente amargo.</p>
+                        <div class="item-tags">
+                            <span class="tag">Artesanal</span>
+                            <span class="tag">Oscura</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_beer.png" alt="Cerveza Clara" style="filter: brightness(1.2);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Tarro Golden Lager</h3>
+                            <span class="item-price">$80</span>
+                        </div>
+                        <p class="item-description">Cerveza clara y crujiente, refrescante al paladar con un ligero
+                            toque de lúpulos florales. Se sirve en vaso escarchado.</p>
+                        <div class="item-tags">
+                            <span class="tag">Clara</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Categoría: Alitas -->
+        <section id="alitas" class="category-section">
+            <h2 class="category-title">🍗 Alitas</h2>
+            <div class="items-grid">
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_wings.png" alt="Alitas Buffalo">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Buffalo Originales (10 pz)</h3>
+                            <span class="item-price">$160</span>
+                        </div>
+                        <p class="item-description">Bañadas en nuestra salsa secreta 22/30, el balance perfecto entre
+                            picante y vinagre. Acompañadas de apio, zanahoria y dip de Blue Cheese o Ranch.</p>
+                        <div class="item-tags">
+                            <span class="tag">🔥 Picante Medio</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_wings.png" alt="Alitas BBQ" style="filter: sepia(0.5);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">BBQ Ahumada Miel (10 pz)</h3>
+                            <span class="item-price">$165</span>
+                        </div>
+                        <p class="item-description">Nuestra mezcla casera de salsa BBQ con toques de humo de nogal y
+                            cubierta de miel natural, doradas a la perfección para que caramelicen.</p>
+                        <div class="item-tags">
+                            <span class="tag">Dulce</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_wings.png" alt="Alitas Lemon Pepper"
+                            style="filter: grayscale(0.2) brightness(1.1);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Lemon Pepper Dry (10 pz)</h3>
+                            <span class="item-price">$155</span>
+                        </div>
+                        <p class="item-description">La versión seca favorita. Crujientes alitas frotadas con nuestra
+                            mezcla especial de pimienta negra agrietada y ralladura cítrica de limón.</p>
+                        <div class="item-tags">
+                            <span class="tag">Dry Rub</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Categoría: Hamburguesas -->
+        <section id="hamburguesas" class="category-section">
+            <h2 class="category-title">🍔 Hamburguesas</h2>
+            <div class="items-grid">
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_burger.png" alt="Hamburguesa 22/30">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">The 22/30 Burger</h3>
+                            <span class="item-price">$185</span>
+                        </div>
+                        <p class="item-description">Doble carne de res 100% Angus, doble porción de queso cheddar
+                            fundido, tocino ahumado grueso, aros de cebolla empanizados y nuestra salsa insignia en pan
+                            brioche artesanal.</p>
+                        <div class="item-tags">
+                            <span class="tag">Recomendación del Chef</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="menu-card">
+                    <div class="card-image">
+                        <img src="img/premium_burger.png" alt="Classic Burger"
+                            style="filter: contrast(1.1) brightness(0.9);">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-header">
+                            <h3 class="item-name">Classic Cheese</h3>
+                            <span class="item-price">$150</span>
+                        </div>
+                        <p class="item-description">Medio libra de carne jugosa, lechuga fresca, rebanadas de tomate
+                            orgánico, cebolla morada, pepinillos crujientes y queso derretido.</p>
+                        <div class="item-tags">
+                            <span class="tag">Clásica</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-logo">22/30 THE WINGS HOUSE</div>
+        <p>© 2026 Todos los derechos reservados. Diseñado para ofrecerte la mejor experiencia.</p>
+    </footer>
+
+    <script>
+        // Actualizar el menú activo basado en la posición del scroll (Intersection Observer)
+        const sections = document.querySelectorAll('.category-section');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '-50% 0px -50% 0px', // Activa la sección cuando pasa por la mitad de la pantalla
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href').substring(1) === entry.target.id) {
+                            link.classList.add('active');
+                            // Opcional: Centrar el menú deslizando si está en un contenedor pequeño
+                            link.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+
+</html>
